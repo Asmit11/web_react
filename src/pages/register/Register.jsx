@@ -1,26 +1,32 @@
 import React, { useState } from "react";
 
 const Register = () => {
-  // Logic Section
+  //Logic section
 
-  // Make a useState for 5 Fields
-  const [firsName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
+  // Make a useState for 5 fields
+  const [firstname, setFirstName] = useState("");
+  const [lastname, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
-  // Make a each function for changing the value
-  const handleFirstname = () => {
+  // Make functions for each changing the values
+
+  const handleFirstname = (e) => {
     setFirstName(e.target.value);
-  }
+  };
+
+  const handleLirstname = (e) => {
+    setLastName(e.target.value);
+  };
   return (
     <>
       <div className="container mt-2">
         <h1>Create an Account!</h1>
         <form className="w-50">
-          <label>Firstname:{firstName}</label>
+          <label>Firstname :{firstname} </label>
           <input
+            onChange={handleFirstname}
             type="text"
             className="form-control"
             placeholder="Enter your first name"
